@@ -19,6 +19,7 @@ int buscarLibre(eMicro lista[], int tam);
 int altaMicros(eMicro micros[], int tam, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT, int* pId);
 void mostrarMicro( eMicro lista, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT);
 int mostrarMicros(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT);
+int ordenarMicros(eMicro lista[], int tam);
 int bajaMicroSistema(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT);
 int buscarMicroId( eMicro lista[], int tam, int Id );
 int modificarMicro(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT);

@@ -6,8 +6,8 @@
 #include "empresas.h"
 #include "tipo.h"
 #include "destino.h"
+#include "viaje.h"
 #include "dataWarehouse.h"
-
 #define TAM 10
 #define TAM_E 4
 #define TAM_T 4
@@ -21,7 +21,8 @@ int main()
     char salir;
     eMicro lista[TAM];
     int defaultIdMicro = 10000;
-    int banderaInicio= 0;
+    eViaje viajes[TAM_V];
+    int defaultIdViajes = 20000;
 
 
     eEmpresa empresas[TAM_E] =
@@ -48,93 +49,101 @@ int main()
         {20003, "Mendoza", 95600}
     };
 
-
     if ( !inicializarMicros(lista, TAM) )
     {
-        printf("Error al iniciar MICROS\n");
+        printf("Error al iniciar autos\n");
     }
+
+    hardcodeaMicros(lista, TAM, 4, &defaultIdMicro);
+    hardcodeaViajes(viajes, TAM_V, 4, &defaultIdViajes);
 
     do
     {
-
-        switch(menu())
+        switch (menu())
         {
         case 1:
-            if (banderaInicio== 0)
+            if( !altaMicros(lista, TAM, empresas, TAM_E, tipos, TAM_T, &defaultIdMicro) )
             {
-                banderaInicio = 1;
-                if( !altaMicros(lista, TAM, empresas, TAM_E, tipos, TAM_T, &defaultIdMicro) )
-                {
-                    printf("No se pudo realizar el alta con exito\n");
-                }
-                else
-                {
-                    printf("Alta exitosa\n");
-                }
-            }
-            break;
-        case 2:
-            if(banderaInicio == 1)
-            {
-
-                if(!modificarMicro(lista, TAM, empresas, TAM_E, tipos, TAM_T))
-                {
-                    printf("No se pudo llevar a cabo la modificacion de datos\n");
-                }
-                else
-                {
-                    printf("Cambios realizados con exito\n");
-                }
+                printf("No se pudo realizar el alta con exito\n");
             }
             else
             {
-                printf("Debe realizar un alta para poder hacer una modificacion en el sistema\n");
+                printf("Alta exitosa\n");
+            }
+
+            break;
+        case 2:
+            if(!modificarMicro(lista, TAM, empresas, TAM_E, tipos, TAM_T))
+            {
+                printf("No se pudo llevar a cabo la modificacion de datos\n");
+            }
+            else
+            {
+                printf("Cambios realizados con exito\n");
             }
             break;
         case 3:
-            if (banderaInicio== 1)
+            if(!bajaMicroSistema(lista, TAM, empresas, TAM_E, tipos, TAM_T))
             {
-                if(!bajaMicroSistema(lista, TAM, empresas, TAM_E, tipos, TAM_T))
-                {
-                    printf("No se pudo realizar la baja\n");
-                }
-                else
-                {
-                    printf("Baja exitosa\n");
-                }
+                printf("No se pudo realizar la baja\n");
             }
             else
             {
-                printf("Debe realizar un alta para poder hacer una Baja en el sistema\n");
+                printf("Baja exitosa\n");
             }
             break;
-
         case 4:
             system("cls");
-            if (!mostrarMicros(lista, TAM, empresas, TAM_E, tipos, TAM_T) )
+            ordenarMicros(lista, TAM);
+            if ( !mostrarMicros(lista, TAM, empresas, TAM_E, tipos, TAM_T) )
             {
                 printf("No se pudo mostrar los autos\n");
             }
             break;
         case 5:
+            system("cls");
             if ( !mostrarEmpresas(empresas, TAM_E) )
             {
-                printf("No se pudo mostrar las Empresas\n");
+                printf("No se pudo mostrar las marcas\n");
             }
             break;
         case 6:
+            system("cls");
             if ( !mostrarTipo(tipos, TAM_T) )
             {
-                printf("No se pudo mostrar los tipos\n");
+                printf("No se pudo mostrar las marcas\n");
             }
             break;
         case 7:
+            system("cls");
+
             if ( !mostrarDestinos(destinos, TAM_D) )
             {
                 printf("No se pudo mostrar los servicios\n");
             }
             break;
-        case 20:
+         case 8:
+            if(!altaViaje(viajes, TAM_V, lista, TAM,empresas, TAM_E,tipos ,TAM_T, destinos, TAM_D,&defaultIdViajes))
+            {
+                printf("Surgio un error al realizar el alta de trabajo\n");
+            }
+            else
+            {
+                printf("Alta trabajo exitosa\n");
+            }
+            break;
+        case 9:
+            if(!mostrarViajes(viajes, TAM_V ,lista, TAM, destinos, TAM_D,empresas, TAM_E, tipos, TAM_T))
+            {
+                printf("Surgio un error al mostrar loss ttrabajos\n");
+            }
+            else
+            {
+                printf("Usted esta viendo los trabajos\n");
+            }
+            break;
+
+        case 10:
             printf("Esta seguro que quiere salir? (S/N)\n");
             fflush(stdin);
             scanf("%c", &salir);
@@ -149,19 +158,14 @@ int main()
             }
             break;
         default:
-            printf("opcion invalida \n");
-            break;
+            printf("Opcion invalida\n");
         }
+        system("pause");
+
     }
     while(seguir == 's');
-
-
 
 
     return 0;
 }
 
-
-
-
-//ordenados por empresa y capacidad

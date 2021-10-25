@@ -165,6 +165,31 @@ int mostrarMicros(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo t
     return todoOk;
 }
 
+int ordenarMicros(eMicro lista[], int tam)
+{
+    int todoOk = 0;
+    eMicro auxMicro;
+
+    if (lista != NULL && tam >0)
+    {
+        for (int i = 0; i < tam -1; i++)
+        {
+            for (int j = i+1; j < tam; j++)
+            {
+                if( lista[i].idEmpresa < lista[j].idEmpresa ||
+                        (lista[i].idEmpresa == lista[j].idEmpresa &&
+                         lista[i].capacidad > lista[j].capacidad))
+                {
+                    auxMicro = lista[i];
+                    lista[i] = lista[j];
+                    lista[j] = auxMicro;
+                }
+            }
+        }
+    }
+
+    return todoOk;
+}
 int bajaMicroSistema(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT)
 {
     int todoOk = 0;

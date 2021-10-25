@@ -105,8 +105,9 @@ void mostrarViaje( eViaje unViaje, eMicro lista[], int tam, eDestino destinos[],
             cargarEmpresaMicro(lista, tam, empresas, tamE, unViaje.idMicro, empresaMicro) ==1 &&
             cargarTipoMicro(lista, tam, tipos, tamT, unViaje.idMicro, tipoMicro)== 1)
     {
-        printf("  %d    %10s      %10s     %10s         $%f           %02d/%02d/%04d\n",
+        printf(" %d            %d            %10s      %10s     %10s         $%.2f           %02d/%02d/%04d\n",
                unViaje.id,
+               unViaje.idMicro,
                empresaMicro,
                tipoMicro,
                descMicro,
@@ -126,12 +127,11 @@ int mostrarViajes( eViaje viajes[], int tamV ,eMicro lista[], int tam, eDestino 
     if( viajes != NULL && tamV > 0 &&lista != NULL && tam > 0 && empresas != NULL && tamE > 0 && tipos != NULL && tamT > 0)
     {
         system("cls");
-        printf("                    **** LISTA DE VIAJES****     \n");
-        mostrarDestinos(destinos, tamD);
+        printf("                                            **** LISTA DE VIAJES****     \n");
         printf("\n");
-        printf("------------------------------------------------------------------------------------\n");
-        printf("    ID          EMPRESA          TIPO        DESCRIPCION        PRECIO            FECHA \n");
-        printf("------------------------------------------------------------------------------------\n");
+        printf("-------------------------------------------------------------------------------------------------------------------\n");
+        printf(" ID VIAJE        ID MICRO            EMPRESA          TIPO        DESCRIPCION        PRECIO               FECHA \n");
+        printf("-------------------------------------------------------------------------------------------------------------------\n");
 
         for (int i = 0; i < tam ; i++)
         {

@@ -16,7 +16,7 @@ int mostrarDestinos(eDestino destinos[], int tamD)
         for (int i = 0; i < tamD; i++)
         {
 
-            printf("  %d       %10s         $%f\n", destinos[i].id, destinos[i].descripcion, destinos[i].precio);
+            printf("  %d       %10s         $%.2f\n", destinos[i].id, destinos[i].descripcion, destinos[i].precio);
         }
         todoOk = 1;
     }
