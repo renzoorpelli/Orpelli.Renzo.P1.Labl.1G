@@ -51,7 +51,7 @@ int main()
 
     if ( !inicializarMicros(lista, TAM) )
     {
-        printf("Error al iniciar autos\n");
+        printf("Error al iniciar Micros\n");
     }
 
     hardcodeaMicros(lista, TAM, 4, &defaultIdMicro);
@@ -97,21 +97,21 @@ int main()
             ordenarMicros(lista, TAM);
             if ( !mostrarMicros(lista, TAM, empresas, TAM_E, tipos, TAM_T) )
             {
-                printf("No se pudo mostrar los autos\n");
+                printf("No se pudo mostrar los Micros\n");
             }
             break;
         case 5:
             system("cls");
             if ( !mostrarEmpresas(empresas, TAM_E) )
             {
-                printf("No se pudo mostrar las marcas\n");
+                printf("No se pudo mostrar las Empresas\n");
             }
             break;
         case 6:
             system("cls");
             if ( !mostrarTipo(tipos, TAM_T) )
             {
-                printf("No se pudo mostrar las marcas\n");
+                printf("No se pudo mostrar los Tipos\n");
             }
             break;
         case 7:
@@ -119,32 +119,32 @@ int main()
 
             if ( !mostrarDestinos(destinos, TAM_D) )
             {
-                printf("No se pudo mostrar los servicios\n");
+                printf("No se pudo mostrar los destinos\n");
             }
             break;
          case 8:
             if(!altaViaje(viajes, TAM_V, lista, TAM,empresas, TAM_E,tipos ,TAM_T, destinos, TAM_D,&defaultIdViajes))
             {
-                printf("Surgio un error al realizar el alta de trabajo\n");
+                printf("Surgio un error al realizar el alta de Viaje\n");
             }
             else
             {
-                printf("Alta trabajo exitosa\n");
+                printf("Alta Viaje exitosa\n");
             }
             break;
         case 9:
             if(!mostrarViajes(viajes, TAM_V ,lista, TAM, destinos, TAM_D,empresas, TAM_E, tipos, TAM_T))
             {
-                printf("Surgio un error al mostrar loss ttrabajos\n");
+                printf("Surgio un error al mostrar loss Viajes\n");
             }
             else
             {
-                printf("Usted esta viendo los trabajos\n");
+                printf("Usted esta viendo los Viajes\n");
             }
             break;
 
         case 10:
-            printf("Esta seguro que quiere salir? (S/N)\n");
+            printf("Esta seguro que quiere salir? S o N \n");
             fflush(stdin);
             scanf("%c", &salir);
             salir = toupper(salir);

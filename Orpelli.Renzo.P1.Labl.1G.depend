@@ -39,7 +39,7 @@
 	"tipo.h"
 	"validarEntero.h"
 
-1635016695 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\micros.h
+1635281125 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\micros.h
 	"empresas.h"
 	"tipo.h"
 
@@ -49,15 +49,15 @@
 	<string.h>
 	"destino.h"
 
-1634946626 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\empresas.c
+1635274569 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\empresas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"empresas.h"
 
-1634946594 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\empresas.h
+1635276423 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\empresas.h
 
-1634942095 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\tipo.h
+1635276554 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\tipo.h
 
 1634942111 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\tipo.c
 	<stdio.h>
@@ -65,7 +65,7 @@
 	<string.h>
 	"tipo.h"
 
-1634949377 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\destino.h
+1635276228 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\destino.h
 
 1634947690 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\fecha.c
 
@@ -75,7 +75,7 @@
 	<string.h>
 	"viaje.h"
 
-1634949512 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\viaje.h
+1635281377 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\viaje.h
 	"fecha.h"
 	"micros.h"
 	"empresas.h"
@@ -84,13 +84,13 @@
 
 1634947701 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\fecha.h
 
-1635016753 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\datawarehouse.c
+1635101277 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\datawarehouse.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
 	"dataWarehouse.h"
 
-1635016077 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\datawarehouse.h
+1635275364 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\datawarehouse.h
 	"micros.h"
 	"viaje.h"
 

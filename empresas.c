@@ -59,7 +59,7 @@ int cargarDescripcionEmpresa( eEmpresa empresas[], int tamE, int idEmpresa, char
         }
         if (flag)
         {
-            todoOk = -1; // no habia marca con el id que le pasaron
+            todoOk = -1; //error no hay empresas con ese id
         }
     }
     return todoOk;
