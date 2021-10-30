@@ -35,7 +35,7 @@ int buscarLibreViaje(eViaje viajes[], int tamV)
     return checkStatus;
 }
 
-int altaViaje(eViaje viajes[], int tamV,eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT, eDestino destinos[], int tamD,int* pIdViajes)
+int altaViaje(eViaje viajes[], int tamV,eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT, eDestino destinos[], int tamD, eChofer choferes[], int tamChof, int* pIdViajes)
 {
     int checkStatus = 0;
     int indice;
@@ -55,7 +55,7 @@ int altaViaje(eViaje viajes[], int tamV,eMicro lista[], int tam, eEmpresa empres
             auxViaje.id = *pIdViajes;
             (*pIdViajes)++;
 
-            mostrarMicros(lista, tam, empresas, tamE, tipos, tamT);
+            mostrarMicros(lista, tam, empresas, tamE, tipos, tamT, choferes, tamChof);
             printf("Ingrese id micro:\n");
             scanf("%d", &auxViaje.idMicro);
             while(buscarMicroId(lista, tam, auxViaje.idMicro) == -1)

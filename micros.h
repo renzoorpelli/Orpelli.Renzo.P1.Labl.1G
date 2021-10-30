@@ -2,12 +2,14 @@
 #define MICROS_H_INCLUDED
 #include "empresas.h"
 #include "tipo.h"
+#include "chofer.h"
 typedef struct
 {
     int id;
     int idEmpresa;
     int idTipo;
     int capacidad;
+    int idChofer;
     int isEmpty;
 
 }eMicro;
@@ -66,7 +68,7 @@ int altaMicros(eMicro micros[], int tam, eEmpresa empresas[], int tamE, eTipo ti
  *
  */
 
-void mostrarMicro( eMicro lista, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT);
+void mostrarMicro( eMicro lista, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT, eChofer choferes[], int tamChof);
 /** \brief funcion encargada de mostrar TODOS los  micros con sus caracteristicas
  *
  * \param lista[]
@@ -79,7 +81,7 @@ void mostrarMicro( eMicro lista, eEmpresa empresas[], int tamE, eTipo tipos[], i
  *
  */
 
-int mostrarMicros(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT);
+int mostrarMicros(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT, eChofer choferes[], int tamChof);
 /** \brief funcion encargada de ordenar los micros segun empresa, y si estas son iguales ordena por capacidad capacidad
  *
  * \param lista[]
@@ -101,7 +103,7 @@ int ordenarMicros(eMicro lista[], int tam);
  *
  */
 
-int bajaMicroSistema(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT);
+int bajaMicroSistema(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT, eChofer choferes[], int tamChof);
 /** \brief funcion encargada de buscar un micro por el id brindado por el programa
  *
  * \param lista[]
@@ -124,7 +126,7 @@ int buscarMicroId( eMicro lista[], int tam, int Id );
  *
  */
 
-int modificarMicro(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT);
+int modificarMicro(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT, eChofer choferes[], int tamChof);
 /** \brief funcion encargada de  brindar el menu de opciones y pedir confirmaciones sobre los cambios a realizar, en este caso recibe parametros porque necesita mostrar la descripcion completa del micro
  *
  * \param lista[]
@@ -137,7 +139,7 @@ int modificarMicro(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo 
  *
  */
 
-int menuModificar( eMicro lista[], int tam, int indice, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT );
+int menuModificar( eMicro lista[], int tam, int indice, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT, eChofer choferes[], int tamChof);
 /** \brief funcion encargada de cargar el nombre de la empresa para que el programa sea mas facil de entender para el usuario
  *
  * \param lista[]

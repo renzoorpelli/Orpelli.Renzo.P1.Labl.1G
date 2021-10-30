@@ -9,6 +9,8 @@ int idMicro[10] = {1000,1001,1002,1003,1003,1003,1003,1000,1002,1002};
 
 int idTipoPasaje[10] = {5000,5002,5003,5001,5002,5001,5000,5000,5001,5001};
 
+int idChoferes[10] = {1002,1000,1001,1001,1003,1000,1004,1003,1002,1000};
+
 int idViajes[10] = {10000,10001,10002,10003,10003,10003,10003,10000,10002,10002};
 
 int idDestinos[10] = {20003,20000,20003,20002,20001,20003,20000,20000,20002,20000};
@@ -31,6 +33,7 @@ int hardcodeaMicros(eMicro lista[], int tam, int cant,int* pId)
             (*pId)++;
             lista[i].idEmpresa = idMicro[i];
             lista[i].idTipo = idTipoPasaje[i];
+            lista[i].idChofer = idChoferes[i];
             lista[i].capacidad = capacidad[i];
             lista[i].isEmpty = 0;
             contador++;

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1635016717 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\main.c
+1635554133 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -10,6 +10,8 @@
 	"destino.h"
 	"viaje.h"
 	"dataWarehouse.h"
+	"chofer.h"
+	"informes.h"
 
 1634936696 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\validarentero.c
 	<stdio.h>
@@ -29,7 +31,7 @@
 
 1634936913 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\validarflotante.h
 
-1635016811 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\micros.c
+1635546822 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\micros.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -39,9 +41,10 @@
 	"tipo.h"
 	"validarEntero.h"
 
-1635281125 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\micros.h
+1635545311 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\micros.h
 	"empresas.h"
 	"tipo.h"
+	"chofer.h"
 
 1635001677 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\destino.c
 	<stdio.h>
@@ -69,13 +72,13 @@
 
 1634947690 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\fecha.c
 
-1635044327 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\viaje.c
+1635545357 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\viaje.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"viaje.h"
 
-1635281377 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\viaje.h
+1635545385 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\viaje.h
 	"fecha.h"
 	"micros.h"
 	"empresas.h"
@@ -84,7 +87,7 @@
 
 1634947701 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\fecha.h
 
-1635101277 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\datawarehouse.c
+1635545529 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\datawarehouse.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -92,5 +95,33 @@
 
 1635275364 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\datawarehouse.h
 	"micros.h"
+	"viaje.h"
+
+1635544592 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\chofer.c
+	"chofer.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1635544585 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\chofer.h
+
+1635554147 source:c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"informes.h"
+	"micros.h"
+	"empresas.h"
+	"tipo.h"
+	"destino.h"
+	"viaje.h"
+	"validarEntero.h"
+
+1635554049 c:\users\renzo\onedrive\documentos\programacion\c\guia clases\ejercicio clases\vectores\cadenas\x\orpelli.renzo.p1.labl.1g\informes.h
+	"micros.h"
+	"empresas.h"
+	"tipo.h"
+	"destino.h"
 	"viaje.h"
 

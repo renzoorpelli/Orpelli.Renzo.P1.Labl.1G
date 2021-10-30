@@ -48,7 +48,7 @@ int buscarLibreViaje(eViaje viajes[], int tamV);
  *
  */
 
-int altaViaje(eViaje viajes[], int tamV,eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT, eDestino destinos[], int tamD,int* pIdViajes);
+int altaViaje(eViaje viajes[], int tamV,eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT, eDestino destinos[], int tamD, eChofer choferes[], int tamChof, int* pIdViajes);
 /** \brief funcion encargada de mostrar un viaje con sus caracteristicas
  *
  * \param unViaje

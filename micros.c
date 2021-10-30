@@ -24,7 +24,9 @@ int menu()
     printf("7- LISTAR DESTINOS\n");
     printf("8- ALTA VIAJES\n");
     printf("9- LISTAR VIAJES\n");
-    printf("10- SALIR\n");
+    printf("10- LISTAR CHOFERES\n");
+    printf("11- MOSTRAR INFORMES\n");
+    printf("12- SALIR\n");
     printf("Ingrese opcion: ");
     fflush(stdin);
     scanf("%d", &opcion);
@@ -117,23 +119,28 @@ int altaMicros(eMicro lista[], int tam, eEmpresa empresas[], int tamE, eTipo tip
 }
 
 
-void mostrarMicro( eMicro lista, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT)
+void mostrarMicro( eMicro lista, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT, eChofer choferes[], int tamChof)
 {
     char descEmpresa[20];
     char descTipo[20];
+    char nombreChofer[20];
+    char sexoChofer;
 
     if ( ( cargarDescripcionEmpresa( empresas, tamE, lista.idEmpresa, descEmpresa ) == 1 ) &&
-            ( cargarDescripcionTipo( tipos, tamT, lista.idTipo, descTipo ) == 1 )   )
+            ( cargarDescripcionTipo( tipos, tamT, lista.idTipo, descTipo ) == 1 ) &&
+        (cargarNombreChofer(choferes, tamChof, lista.idChofer, nombreChofer, &sexoChofer)== 1))
     {
-        printf("  %d          %10s      %10s            %d \n",
+        printf("  %d          %10s      %10s       %10s             %c                     %d \n",
                lista.id,
                descEmpresa,
                descTipo,
+               nombreChofer,
+               sexoChofer,
                lista.capacidad );
     }
 }
 
-int mostrarMicros(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT)
+int mostrarMicros(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT, eChofer choferes[], int tamChof)
 {
     int todoOk = 0;
     int flag = 1;
@@ -142,15 +149,15 @@ int mostrarMicros(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo t
     {
         system("cls");
         printf("               **** LISTA DE MICROS****     \n");
-        printf("------------------------------------------------------------\n");
-        printf(" ID             EMPRESA           TIPO          CAPACIDAD\n");
-        printf("------------------------------------------------------------\n");
+        printf("-----------------------------------------------------------------------------------------------------\n");
+        printf(" ID             EMPRESA           TIPO              NOMBRE CHOFER       SEXO CHOFER         CAPACIDAD\n");
+        printf("-----------------------------------------------------------------------------------------------------\n");
 
         for (int i = 0; i < tam; i++)
         {
             if (!lista[i].isEmpty)
             {
-                mostrarMicro(lista[i], empresas, tamE, tipos, tamT );
+                mostrarMicro(lista[i], empresas, tamE, tipos, tamT, choferes, tamChof);
                 flag = 0;
             }
         }
@@ -190,7 +197,7 @@ int ordenarMicros(eMicro lista[], int tam)
 
     return todoOk;
 }
-int bajaMicroSistema(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT)
+int bajaMicroSistema(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT, eChofer choferes[], int tamChof)
 {
     int todoOk = 0;
     int indice;
@@ -201,7 +208,7 @@ int bajaMicroSistema(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTip
     {
         system("cls");
         printf("   *** BAJA DE MICROS DEL SISTEMA *** \n\n");
-        mostrarMicros(lista, tam, empresas, tamE, tipos, tamT);
+        mostrarMicros(lista, tam, empresas, tamE, tipos, tamT, choferes, tamChof);
         printf("------------------------------------------------------------\n");
         printf("Ingrese id del Micro: \n");
         scanf("%d", &id);
@@ -214,7 +221,7 @@ int bajaMicroSistema(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTip
         }
         else
         {
-            mostrarMicro(lista[indice], empresas, tamE, tipos, tamT );
+            mostrarMicro(lista[indice], empresas, tamE, tipos, tamT, choferes, tamChof );
             printf("Confirma baja del sistema? S o N: \n");
             fflush(stdin);
             scanf("%c", &confirmaBaja);
@@ -250,7 +257,7 @@ int buscarMicroId( eMicro lista[], int tam, int Id )
 }
 
 
-int modificarMicro(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT)
+int modificarMicro(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo tipos[], int tamT, eChofer choferes[], int tamChof)
 {
     int todoOk = 0;
     int indice;
@@ -263,7 +270,7 @@ int modificarMicro(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo 
     {
         system("cls");
         printf("   *** MODIFICACION DE MICROS DEL SISTEMA *** \n\n");
-        mostrarMicros(lista, tam, empresas, tamE, tipos, tamT);
+        mostrarMicros(lista, tam, empresas, tamE, tipos, tamT, choferes, tamChof);
         printf("------------------------------------------------------------\n");
         printf("Ingrese id del Micro: ");
         scanf("%d", &id);
@@ -278,7 +285,7 @@ int modificarMicro(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo 
         {
             do
             {
-                switch(menuModificar(lista,tam, indice, empresas, tamE, tipos, tamT))
+                switch(menuModificar(lista,tam, indice, empresas, tamE, tipos, tamT, choferes, tamChof))
                 {
                 case 1:
                     mostrarTipo(tipos, tamT);
@@ -357,12 +364,12 @@ int modificarMicro(eMicro lista[], int tam, eEmpresa empresas[], int tamE,eTipo 
     return todoOk;
 }
 
-int menuModificar( eMicro lista[], int tam, int indice, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT )
+int menuModificar( eMicro lista[], int tam, int indice, eEmpresa empresas[], int tamE, eTipo tipos[], int tamT, eChofer choferes[], int tamChof)
 {
     int opcion = 0;
     system("cls");
     printf("------------------------------------------------------------\n");
-    mostrarMicro(lista[indice], empresas, tamE, tipos, tamT);
+    mostrarMicro(lista[indice], empresas, tamE, tipos, tamT, choferes, tamChof);
     printf("------------------------------------------------------------\n");
     printf("1- Editar tipo\n");
     printf("2- Editar Capacidad\n");

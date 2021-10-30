@@ -8,15 +8,18 @@
 #include "destino.h"
 #include "viaje.h"
 #include "dataWarehouse.h"
+#include "chofer.h"
+#include "informes.h"
+
 #define TAM 10
 #define TAM_E 4
 #define TAM_T 4
 #define TAM_D 4
 #define TAM_V 10
+#define TAM_CHOF 5
 
 int main()
 {
-
     char seguir = 's';
     char salir;
     eMicro lista[TAM];
@@ -49,6 +52,15 @@ int main()
         {20003, "Mendoza", 95600}
     };
 
+    eChofer choferes[TAM_CHOF] =
+    {
+        {1000, "Renzo", 'm'},
+        {1001, "Pablo", 'm'},
+        {1002, "Juan",  'm'},
+        {1003, "Pedro", 'm'},
+        {1004, "Tomas", 'm'}
+    };
+
     if ( !inicializarMicros(lista, TAM) )
     {
         printf("Error al iniciar Micros\n");
@@ -73,7 +85,7 @@ int main()
 
             break;
         case 2:
-            if(!modificarMicro(lista, TAM, empresas, TAM_E, tipos, TAM_T))
+            if(!modificarMicro(lista, TAM, empresas, TAM_E, tipos, TAM_T, choferes, TAM_CHOF))
             {
                 printf("No se pudo llevar a cabo la modificacion de datos\n");
             }
@@ -83,7 +95,7 @@ int main()
             }
             break;
         case 3:
-            if(!bajaMicroSistema(lista, TAM, empresas, TAM_E, tipos, TAM_T))
+            if(!bajaMicroSistema(lista, TAM, empresas, TAM_E, tipos, TAM_T, choferes, TAM_CHOF))
             {
                 printf("No se pudo realizar la baja\n");
             }
@@ -95,7 +107,7 @@ int main()
         case 4:
             system("cls");
             ordenarMicros(lista, TAM);
-            if ( !mostrarMicros(lista, TAM, empresas, TAM_E, tipos, TAM_T) )
+            if ( !mostrarMicros(lista, TAM, empresas, TAM_E, tipos, TAM_T, choferes, TAM_CHOF) )
             {
                 printf("No se pudo mostrar los Micros\n");
             }
@@ -123,7 +135,7 @@ int main()
             }
             break;
          case 8:
-            if(!altaViaje(viajes, TAM_V, lista, TAM,empresas, TAM_E,tipos ,TAM_T, destinos, TAM_D,&defaultIdViajes))
+            if(!altaViaje(viajes, TAM_V, lista, TAM,empresas, TAM_E,tipos ,TAM_T, destinos, TAM_D,choferes,TAM_CHOF,&defaultIdViajes))
             {
                 printf("Surgio un error al realizar el alta de Viaje\n");
             }
@@ -142,8 +154,71 @@ int main()
                 printf("Usted esta viendo los Viajes\n");
             }
             break;
-
         case 10:
+            if(!mostrarChoferes(choferes, TAM_CHOF))
+            {
+                printf("Surgio un error al mostrar loss Choferes\n");
+            }
+            else
+            {
+                printf("Usted esta viendo los Choferes\n");
+            }
+            break;
+
+        case 11:
+            switch(menuInformes())
+            {
+            case 1:
+                if( !informeMicrosEmpresa(lista, TAM, empresas, TAM_E, tipos, TAM_T, choferes, TAM_CHOF))
+                {
+                    printf("No se pudo informar los micros empresa \n");
+                }
+                break;
+            case 2:
+                if( !informeMicrosTipo(lista, TAM, empresas, TAM_E, tipos, TAM_T, choferes, TAM_CHOF))
+                {
+                    printf("No se pudo informar los micros tipo \n");
+                }
+                break;
+            case 3:
+                if( !informePromedioMicrosVip(lista, TAM, empresas, TAM_E, tipos, TAM_T, choferes, TAM_CHOF))
+                {
+                    printf("No se pudo informar el promedio de los micros vip \n");
+                }
+                break;
+            case 4:
+                if( !informarMicrosEmpresa(lista, TAM, empresas, TAM_E, tipos, TAM_T, choferes, TAM_CHOF))
+                {
+                    printf("No se pudo informar los micros por empresa \n");
+                }
+                break;
+            case 5:
+                if( !informeEmpresaMasPasajeros(lista, TAM, empresas, TAM_E, tipos, TAM_T, choferes, TAM_CHOF))
+                {
+                    printf("No se pudo informar los micros con mas  pasajeros \n");
+                }
+                break;
+            case 6:
+                if( !informeEmpresaMenosPasajeros(lista, TAM, empresas, TAM_E, tipos, TAM_T, choferes, TAM_CHOF))
+                {
+                    printf("No se pudo informar los micros con mas  pasajeros \n");
+                }
+                break;
+            case 7:
+                if( !informarViajesMicro(viajes, TAM_V, lista, TAM, destinos, TAM_D, empresas, TAM_E, tipos, TAM_T,choferes, TAM_CHOF))
+                {
+                    printf("No se pudo informar viajes de micros \n");
+                }
+                break;
+            case 8:
+                if( !informarImporteMicro(viajes, TAM_V, lista, TAM, destinos, TAM_D, empresas, TAM_E, tipos, TAM_T,choferes, TAM_CHOF))
+                {
+                    printf("No se pudo informar los importes a pagar \n");
+                }
+                break;
+            }
+            break;
+        case 12:
             printf("Esta seguro que quiere salir? S o N \n");
             fflush(stdin);
             scanf("%c", &salir);
